@@ -10,14 +10,9 @@ import './styles.scss';
 
 export const SliderContext = createContext();
 
-const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
+const Slider = function ({ width, height, autoPlay, autoPlayTime, items }) {
   const [slide, setSlide] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
-
-  const items = [
-    'https://tourism.krd.ru/upload/iblock/0fc/0fc99d129cd93608fc3c04686c24c8dc.jpg',
-    'https://tourism.krd.ru/upload/iblock/aaf/aaf0ea6aa9b11149d78edefc864f5ff8.jpg',
-  ];
 
   const changeSlide = (direction = 1) => {
     let slideNumber = 0;
@@ -101,6 +96,7 @@ Slider.propTypes = {
   autoPlayTime: PropTypes.number,
   width: PropTypes.string,
   height: PropTypes.string,
+  items: PropTypes.array,
 };
 
 Slider.defaultProps = {
@@ -108,6 +104,7 @@ Slider.defaultProps = {
   autoPlayTime: 5000,
   width: '100%',
   height: '100%',
+  items: [],
 };
 
 export default Slider;
