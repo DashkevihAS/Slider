@@ -6,6 +6,8 @@ import Dots from './Controls/Dots';
 
 import SlidesList from './SlidesList';
 
+import './styles.scss';
+
 export const SliderContext = createContext();
 
 const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
